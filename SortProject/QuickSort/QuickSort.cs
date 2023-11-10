@@ -1,4 +1,5 @@
-﻿namespace QuickSort
+﻿//快速排序
+namespace QuickSort
 {
     internal class QuickSort
     {
