@@ -22,7 +22,7 @@ namespace APathfinding
             closePoints = new List<Point>();
             openPoints = new List<Point>();
             this.InitMap();
-            Point startPoint = map[0][0];
+            Point startPoint = map[0][3];
             openPoints.Add(startPoint);
             PathFinding(startPoint);
         }
@@ -148,14 +148,14 @@ namespace APathfinding
         }
 
         // 目标点周围的点
-        List<Point> aroundPoint = new List<Point>();
+       private List<Point> aroundPoint = new List<Point>();
         /// <summary>
         /// 寻找目标点周围的点
         /// </summary>
         private List<Point> FindAround(Point target)
         {
             aroundPoint.Clear();
-            if (target.X - 1 > 0)
+            if (target.X - 1 >= 0)
             {
                 Point point = map[target.X - 1][target.Y];
                 aroundPoint.Add(point);
@@ -165,7 +165,7 @@ namespace APathfinding
                 Point point = map[target.X + 1][target.Y];
                 aroundPoint.Add(point);
             }
-            if (target.Y - 1 > 0)
+            if (target.Y - 1 >= 0)
             {
                 Point point = map[target.X][target.Y - 1];
                 aroundPoint.Add(point);

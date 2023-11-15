@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace APathfinding
 {
-    internal class Point :  IComparable<Point>
+    internal class Point : IComparable<Point>
     {
         public int X;
         public int Y;
