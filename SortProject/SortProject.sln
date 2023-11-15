@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSort", "QuickSort\QuickSort.csproj", "{F5451CB4-35AD-41AA-ABA4-83D64F793C5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickSort", "QuickSort\QuickSort.csproj", "{F5451CB4-35AD-41AA-ABA4-83D64F793C5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSort", "BubbleSort\BubbleSort.csproj", "{8E519124-0A3E-420A-B411-FFE1BC189216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BubbleSort", "BubbleSort\BubbleSort.csproj", "{8E519124-0A3E-420A-B411-FFE1BC189216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectSort", "SelectSort\SelectSort.csproj", "{4FC18F16-B07B-4CB3-B9B0-56CE70693056}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertSort", "InsertSort\InsertSort.csproj", "{8DCBD50C-EECD-4152-8A14-A1362FB28E77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectSort", "SelectSort\SelectSort.csproj", "{4FC18F16-B07B-4CB3-B9B0-56CE70693056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{4FC18F16-B07B-4CB3-B9B0-56CE70693056}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC18F16-B07B-4CB3-B9B0-56CE70693056}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC18F16-B07B-4CB3-B9B0-56CE70693056}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8DCBD50C-EECD-4152-8A14-A1362FB28E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DCBD50C-EECD-4152-8A14-A1362FB28E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DCBD50C-EECD-4152-8A14-A1362FB28E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DCBD50C-EECD-4152-8A14-A1362FB28E77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
