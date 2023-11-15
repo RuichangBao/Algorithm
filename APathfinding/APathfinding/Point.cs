@@ -14,21 +14,12 @@ namespace APathfinding
         public bool state;
         public List<Point> path;
         public int score;//路径评分
-        public Point()
-        {
-                
-        }
+
         public Point(int X, int Y)
         {
             this.X = X;
             this.Y = Y;
             path = new List<Point>();
-        }
-        //计算当前点距离目标点的距离
-        public double GetPointLength(Point targetPoint)
-        {
-            double length = Math.Pow((targetPoint.X - this.X), 2) + Math.Pow((targetPoint.Y - this.Y), 2);
-            return Math.Sqrt(length);
         }
         /// <summary>
         /// 更新目标路径(从起点到该点的目标路径)
@@ -48,14 +39,15 @@ namespace APathfinding
         {
             this.score = path.Count + score;
         }
-        public override string ToString()
-        {
-            return "x:" + X + "     y:" + Y;
-        }
+
 
         public int CompareTo(Point? other)
         {
             return this.score.CompareTo(other?.score);
+        }
+        public override string ToString()
+        {
+            return "x:" + X + "     y:" + Y;
         }
     }
 }
