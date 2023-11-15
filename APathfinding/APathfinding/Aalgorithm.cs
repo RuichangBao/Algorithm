@@ -22,7 +22,7 @@ namespace APathfinding
             closePoints = new List<Point>();
             openPoints = new List<Point>();
             this.InitMap();
-            Point startPoint = map[0][3];
+            Point startPoint = map[3][5];
             openPoints.Add(startPoint);
             PathFinding(startPoint);
         }
@@ -34,12 +34,12 @@ namespace APathfinding
             string str =
                 "0 0 0 0 | 0 0 0 0 0/n" +
                 "0 | | | | 0 0 0 0 0/n" +
-                "0 0 0 0 | 0 0 0 0 0/n" +
-                "0 | | 0 0 0 | | | |/n" +
+                "0 0 0 0 0 0 0 0 0 0/n" +
+                "0 | | 0 | 0 | | | |/n" +
                 "0 | 0 0 | 0 0 0 0 0/n" +
-                "| | 0 0 | 0 0 0 0 0/n" +
+                "| | 0 0 | | | | | 0/n" +
                 "0 0 0 0 | 0 0 0 0 0/n" +
-                "0 0 0 0 | 0 0 0 0 0/n" +
+                "0 0 0 0 | 0 | | | |/n" +
                 "0 0 0 0 | 0 0 0 0 0/n" +
                 "| 0 0 0 0 0 0 0 0 0";
            
