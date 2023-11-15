@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace APathfinding
+﻿namespace AStar
 {
     /// <summary>
     /// A*算法实现
@@ -22,7 +15,7 @@ namespace APathfinding
             closePoints = new List<Point>();
             openPoints = new List<Point>();
             this.InitMap();
-            Point startPoint = map[3][5];
+            Point startPoint = map[7][9];
             openPoints.Add(startPoint);
             PathFinding(startPoint);
         }
@@ -32,17 +25,17 @@ namespace APathfinding
         private void InitMap()
         {
             string str =
-                "0 0 0 0 | 0 0 0 0 0/n" +
-                "0 | | | | 0 0 0 0 0/n" +
                 "0 0 0 0 0 0 0 0 0 0/n" +
-                "0 | | 0 | 0 | | | |/n" +
-                "0 | 0 0 | 0 0 0 0 0/n" +
-                "| | 0 0 | | | | | 0/n" +
                 "0 0 0 0 | 0 0 0 0 0/n" +
-                "0 0 0 0 | 0 | | | |/n" +
                 "0 0 0 0 | 0 0 0 0 0/n" +
-                "| 0 0 0 0 0 0 0 0 0";
-           
+                "0 0 0 0 | 0 0 0 0 0/n" +
+                "0 0 0 0 | 0 0 0 0 0/n" +
+                "0 0 0 0 | 0 0 0 0 0/n" +
+                "0 0 0 0 | 0 0 0 0 0/n" +
+                "0 0 0 0 | 0 0 0 0 0/n" +
+                "0 0 0 0 | | | | | |/n" +
+                "0 0 0 0 0 0 0 0 0 0";
+
             map = new Point[MAPNUM][];
             for (int i = 0; i < MAPNUM; i++)
             {
@@ -89,7 +82,7 @@ namespace APathfinding
                 {
                     //判断那条路径最近
                     int oldScore = tarPoint.path.Count + this.GetResidueLength(tarPoint, endMapPoint);
-                    int newScore = starMapFind.score+1+this.GetResidueLength(tarPoint, endMapPoint);
+                    int newScore = starMapFind.score + 1 + this.GetResidueLength(tarPoint, endMapPoint);
                     if (newScore < oldScore)
                     {
                         tarPoint.UpdataPath(starMapFind);
@@ -101,7 +94,7 @@ namespace APathfinding
             closePoints.Add(starMapFind);
             bool isFind = CheckFindTarget();
             if (isFind)
-                return;            
+                return;
             openPoints.Remove(starMapFind);
             if (openPoints.Count <= 0)
             {
@@ -119,22 +112,23 @@ namespace APathfinding
             {
                 if (endMapPoint == openPoints[i])
                 {
-                    Console.WriteLine("找到路径:长度为："+ endMapPoint.path.Count);
+                    Console.WriteLine("找到路径:长度为：" + endMapPoint.path.Count);
                     for (int j = 0; j < map.Length; j++)
                     {
                         for (int k = 0; k < map[j].Length; k++)
                         {
+
                             if (TarInList(map[j][k], endMapPoint.path))
                             {
-                                Console.Write("*");
+                                Console.Write("*", Console.ForegroundColor = ConsoleColor.Red);
                             }
                             else if (map[j][k].state)
                             {
-                                Console.Write("0");
+                                Console.Write("0", Console.ForegroundColor = ConsoleColor.White);
                             }
                             else
                             {
-                                Console.Write("|");
+                                Console.Write("|", Console.ForegroundColor = ConsoleColor.White);
                             }
                             Console.Write(" ");
                         }
@@ -148,7 +142,7 @@ namespace APathfinding
         }
 
         // 目标点周围的点
-       private List<Point> aroundPoint = new List<Point>();
+        private List<Point> aroundPoint = new List<Point>();
         /// <summary>
         /// 寻找目标点周围的点
         /// </summary>

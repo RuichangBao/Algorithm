@@ -1,5 +1,5 @@
 ﻿///A*算法
-namespace APathfinding
+namespace AStar
 {
     internal class Program
     {
